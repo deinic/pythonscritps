@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>AcquaMAT Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+
+  <!--   <script src="http://leaflet.github.io/Leaflet.draw/docs/examples/libs/leaflet-src.js"></script>
+  <link rel="stylesheet" href="http://leaflet.github.io/Leaflet.draw/docs/examples/libs/leaflet.css" /> -->
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+
+  <script src="https://www.domoritz.de/leaflet-locatecontrol/src/L.Control.Locate.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://www.domoritz.de/leaflet-locatecontrol/dist/L.Control.Locate.min.css " />
+
+  <script src="https://leaflet.github.io/Leaflet.draw/src/Leaflet.draw.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/Leaflet.Draw.Event.js"></script>
+  <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.draw/src/leaflet.draw.css" />
+
+  <script src="https://leaflet.github.io/Leaflet.draw/src/Toolbar.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/Tooltip.js"></script>
+
+  <script src="https://leaflet.github.io/Leaflet.draw/src/ext/GeometryUtil.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/ext/LatLngUtil.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/ext/LineUtil.Intersect.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/ext/Polygon.Intersect.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/ext/Polyline.Intersect.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/ext/TouchEvents.js"></script>
+
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/DrawToolbar.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Feature.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.SimpleShape.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Polyline.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Marker.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Circle.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.CircleMarker.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Polygon.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/draw/handler/Draw.Rectangle.js"></script>
+
+
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/EditToolbar.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/EditToolbar.Edit.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/EditToolbar.Delete.js"></script>
+
+  <script src="https://leaflet.github.io/Leaflet.draw/src/Control.Draw.js"></script>
+
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Poly.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.SimpleShape.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Rectangle.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Marker.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.CircleMarker.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.draw/src/edit/handler/Edit.Circle.js"></script>
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+
+
+</head>
+
+<body>
+  <div class="jumbotron">
+    <h1 id='display' class="display-4"></h1>
+    <p id='sub_display' class="lead"></p>
+    <hr class="my-4">
+
+  </div>
+
+  <div class="container">
+
+
+    <form action="create_json.py" method="post" id="element" >
+
+
+      <div class="form-group">
+        <input hidden type="text" name="id" class="form-control" id="idInput">
+      </div>
+      <div class="form-group">
+        <label id='address' for="titleInput"></label>
+        <input required type="text" name="address" class="form-control" id="titleInput">
+      </div>
+      <div class="form-group">
+        <label id='city' for="cityInput"></label>
+        <input required type="text" name="city" class="form-control" id="cityInput">
+      </div>
+      <div class="form-group">
+        <label id='country' for="countryInput"></label>
+        <input required type="text" name="country" class="form-control" id="countryInput">
+      </div>
+      <div class="form-group">
+        <label id='note' for="noteInput"><strong></strong></label>
+        <textarea type="text" name="note" class="form-control" id="noteInput"></textarea>
+      </div>
+      <div class="form-group">
+        <label id='fileToUpload'></label>
+        <input type="file" name="fileToUpload" class="form-control" id="fileInput">
+      </div>
+      <label id='status' for="statusInput"></label>
+      <select class="form-control" name="select">
+        <option id='status_1' value="1"></option>
+        <option id='status_2' value="2"></option>
+        <option id='status_3' value="3"></option>
+      </select>
+      <p></p>
+      <label id='geolocation'></label>
+      <div id="map"></div>
+      <div id="form_lat" class="form-group">
+        <label for="latInput"><strong>Lat</strong></label>
+        <input required type="lat" name="lat" class="form-control" id="latInput">
+      </div>
+      <div id="form_lon" class="form-group">
+        <label for="lonInput"><strong>Long</strong></label>
+        <input required type="lon" name="lon" class="form-control" id="lonInput">
+      </div>
+      <button id='submit' type="submit" class="mb-2 btn btn-primary btn-lg btn-block float-right">Submit</button>
+    </form>
+    <a id='back_to_map' type="button" href='./../'
+      class="mb-2 btn btn-outline-primary btn-lg btn-block float-right"></a>
+  </div>
+
+
+
+
+  <script>
+
+
+    map = new L.Map('map', { center: new L.LatLng(40.86824923830431, 14.464874267578123), zoom: 5 });
+
+
+
+    L.Control.geocoder().addTo(map);
+
+    var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      osmAttrib = '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors | © 2019 ColorMap powered by  <a href="https://nicoladeinnocentis.it/contattami" target="_blank">Geopillole</a> | <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0;margin-top:1%;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></a>',
+      osm = L.tileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib }).addTo(map);
+    /* 
+    
+        var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+        }).addTo(map); */
+
+
+
+
+    // To_check
+
+    if (window.location.search) {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      var id = urlParams.get('node')
+      /*      $("#map").hide()
+           $("#geolocation").hide()
+           $("#form_lat").hide()
+           $("#form_lon").hide() */
+
+
+      $.getJSON('https://raw.githubusercontent.com/deinic/fontanelle/main/fontanelle.json', function (data) {
+        console.log(id)
+
+        Object.entries(data.features).forEach(([key, val]) => {
+          if (val.properties.node == id) {
+            console.log(val.properties.node)
+            $("#latInput").val(val.geometry.coordinates[1])
+            $("#lonInput").val(val.geometry.coordinates[0])
+            $("#idInput").val(val.properties.node)
+
+            $.getJSON('https://nominatim.openstreetmap.org/reverse?lat=' + val.geometry.coordinates[1] + '&lon=' + val.geometry.coordinates[0] + '&format=json', function (geocode) {
+              $("#titleInput").val(geocode.address.road)
+              $("#cityInput").val((geocode.address.city) || (geocode.address.town) || (geocode.address.village))
+              $("#countryInput").val(geocode.address.country)
+
+            })
+
+
+
+
+            var marker = L.marker([val.geometry.coordinates[1], val.geometry.coordinates[0]]).addTo(map);
+
+            //Controlli Draw
+            map.addControl(new L.Control.Draw({
+              edit: {
+                featureGroup: L.featureGroup([marker]),
+                remove: false
+              },
+              draw: {
+                circlemarker: false,
+                marker: false,
+                polyline: false,
+                polygon: false,
+                circle: false,
+                rectangle: false
+              }
+            }));
+
+
+
+
+
+
+
+            // Object(s) edited - update popups
+            map.on('draw:edited', function (event) {
+
+              var layers = event.layers;
+              layers.eachLayer(function (layer) {
+                point.addLayer(layer);
+                var geojson = layer.toGeoJSON();
+                var lon = geojson.geometry.coordinates[0];
+                var lat = geojson.geometry.coordinates[1];
+
+                $("#idInput").val("tmp_" + Math.floor(Math.random() * 1000000))
+                $.ajax({
+                  url: "https://overpass-api.de/api/interpreter",
+                  type: "POST",
+                  data: "[out:json][timeout:25];node['amenity'='drinking_water'](around:20," + lat + "," + lon + ");out;",
+                  success: function (result) {
+                    if (result.elements[0].id) {
+
+                      $("#idInput").val(result.elements[0].id)
+                    }
+                  }
+                });
+                $("#latInput").val(lat)
+                $("#lonInput").val(lon)
+              });
+
+            });
+          }
+        });
+
+      });
+
+
+    } else {
+
+
+      /*       $.getJSON('https://raw.githubusercontent.com/deinic/fontanelle/main/fontanelle.json', function (data) {
+      
+              var id = Object.keys(data.features).length
+              $("#idInput").val(id)
+      
+            }); */
+
+      drawnItems = L.featureGroup().addTo(map);
+
+      //Controlli Draw
+      map.addControl(new L.Control.Draw({
+        edit: {
+          featureGroup: drawnItems,
+        },
+        draw: {
+          circlemarker: false,
+          marker: true,
+          polyline: false,
+          polygon: false,
+          circle: false,
+          rectangle: false
+        }
+      }));
+
+      /* 
+          var ZoomViewer = L.Control.extend({
+          onAdd: function(){
+            var gauge = L.DomUtil.create('div');
+            gauge.style.width = '200px';
+            gauge.style.background = 'rgba(255,255,255,0.5)';
+            gauge.style.textAlign = 'left';
+            map.on('zoomstart zoom zoomend', function(ev){
+              gauge.innerHTML = 'Zoom level: ' + map.getZoom();
+            })
+            return gauge;
+          }
+        }); 
+      
+        (new ZoomViewer).addTo(map);
+        */
+
+
+      // Object created - bind popup to layer, add to feature group
+      map.on('draw:created', function (event) {
+        var type = event.layerType;
+        var layer = event.layer;
+        drawnItems.addLayer(layer);
+        var geojson = layer.toGeoJSON();
+        var lon = geojson.geometry.coordinates[0];
+        var lat = geojson.geometry.coordinates[1];
+        $("#idInput").val("tmp_" + Math.floor(Math.random() * 1000000))
+        $.ajax({
+          url: "https://overpass-api.de/api/interpreter",
+          type: "POST",
+          data: "[out:json][timeout:25];node['amenity'='drinking_water'](around:20," + lat + "," + lon + ");out;",
+          success: function (result) {
+            if (result.elements[0].id) {
+
+              $("#idInput").val(result.elements[0].id)
+            }
+          }
+        });
+
+        $("#latInput").val(lat)
+        $("#lonInput").val(lon)
+      });
+
+
+      // Object(s) edited - update popups
+      map.on('draw:edited', function (event) {
+        var layers = event.layers;
+        layers.eachLayer(function (layer) {
+          drawnItems.addLayer(layer);
+          var geojson = layer.toGeoJSON();
+          var lon = geojson.geometry.coordinates[0];
+          var lat = geojson.geometry.coordinates[1];
+          $("#idInput").val("tmp_" + Math.floor(Math.random() * 1000000))
+          $.ajax({
+            url: "https://overpass-api.de/api/interpreter",
+            type: "POST",
+            data: "[out:json][timeout:25];node['amenity'='drinking_water'](around:20," + lat + "," + lon + ");out;",
+            success: function (result) {
+              if (result.elements[0].id) {
+
+                $("#idInput").val(result.elements[0].id)
+              }
+            }
+          });
+          $("#latInput").val(lat)
+          $("#lonInput").val(lon)
+        });
+
+      });
+
+
+    }
+
+    lc = L.control.locate({
+      position: 'topright',
+      showPopup: false,
+      drawCircle: false,
+      drawMarker: true,
+      icon: 'fa fa-circle',
+      markerClass: L.marker,
+      getLocationBounds: function (e) {
+        $("#latInput").val(e.latitude)
+        $("#lonInput").val(e.longitude)
+        map.flyTo([e.latitude, e.longitude], 18)
+      }
+    }).addTo(map);
+
+
+
+  </script>
+
+  <script src="../src/translation.js"></script>
+</body>
+
+</html>
